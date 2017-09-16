@@ -1,6 +1,7 @@
 import { CompleteComponent } from './pages/complete.component';
 import { ReleaseComponent } from './pages/release.component';
 import { OrderComponent } from './pages/order.component';
+import { VoucherComponent } from './pages/voucher.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
     {
         path: 'releases/:product',
         component: ReleaseComponent
+    },
+    {
+        path: 'voucher/:product',
+        component: VoucherComponent
     }
 ];
 

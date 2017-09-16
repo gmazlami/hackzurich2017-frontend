@@ -2,6 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompleteComponent } from './pages/complete.component';
 import { ReleaseComponent } from './pages/release.component';
 import { OrderComponent } from './pages/order.component';
+import { VoucherComponent } from './pages/voucher.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './pages/search.component';
@@ -19,7 +20,8 @@ import { routing } from './app.routes';
     SearchComponent,
     OrderComponent,
     ReleaseComponent,
-    CompleteComponent
+    CompleteComponent,
+    VoucherComponent
   ],
   imports: [
     routing,
