@@ -6,9 +6,7 @@
     </div>
     <div class="row center justify-content-center">
         <div class="brand col-8">
-            <blockquote class="blockquote" *ngFor="let tweet of tweets">
-                <p class="mb-0">{{ tweet.text }}</p>
-                <footer class="blockquote-footer">That guy from Twitter</footer>
-            </blockquote>
+            <div class="text-center"><i class="fa fa-spinner fa-spin"></i> Analyzing Sentiments...</div>
+            <tweet [tweet]="tweet" *ngFor="let tweet of tweets"></tweet>
         </div>
     </div>

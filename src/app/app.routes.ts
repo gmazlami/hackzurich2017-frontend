@@ -1,5 +1,4 @@
 import { CompleteComponent } from './pages/complete.component';
-import { ReleaseComponent } from './pages/release.component';
 import { OrderComponent } from './pages/order.component';
 import { VoucherComponent } from './pages/voucher.component';
 import { ModuleWithProviders } from '@angular/core';
@@ -20,10 +19,6 @@ const appRoutes: Routes = [
     {
         path: 'completed/:product',
         component: CompleteComponent
-    },
-    {
-        path: 'releases/:product',
-        component: ReleaseComponent
     },
     {
         path: 'voucher/:product',

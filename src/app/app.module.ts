@@ -1,6 +1,6 @@
+import { TweetComponent } from './pages/tweet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompleteComponent } from './pages/complete.component';
-import { ReleaseComponent } from './pages/release.component';
 import { OrderComponent } from './pages/order.component';
 import { VoucherComponent } from './pages/voucher.component';
 import { HttpModule } from '@angular/http';
@@ -19,9 +19,9 @@ import { routing } from './app.routes';
     AppComponent,
     SearchComponent,
     OrderComponent,
-    ReleaseComponent,
     CompleteComponent,
-    VoucherComponent
+    VoucherComponent,
+    TweetComponent
   ],
   imports: [
     routing,

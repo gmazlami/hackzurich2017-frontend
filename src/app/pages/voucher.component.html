@@ -8,19 +8,40 @@
     <div class="brand col-8">
         <h3>{{ contract.product.name }}</h3>
         <p>
-            You bought <b>{{ contract.product.name }}</b> for <b>{{ contract.product.price / 100 }} CHF</b>, and paid 
-            {{ Math.floor(contract.insurancePrice) }} CHF to insure your purchase.
+            You bought <b>{{ contract.product.name }}</b> for <b>{{ contract.product.price / 100 }} CHF</b>, and paid {{
+            Math.floor(contract.insurancePrice) }} CHF to insure your purchase.
         </p>
-        
+
+        <p>
+            We monitored your product closely, and have decided that it is {{ contract.avg.sentiment >= 0 ? '🎉' : '💩' }}.
+
+            <span *ngIf="contract.avg.sentiment >= 0">
+                Therefore, just enjoy your product! It is wonderful!
+            </span>
+
+            <span *ngIf="contract.avg.sentiment < 0">
+                Therefore, we reimburse you your hard-earned money in form of this Voucher. Go and order something better!
+            </span>
+        </p>
+
+        <hr>
+
+        <div class="text-center" style="font-size: 1.5rem">
+            Voucher: <code>6Fks45fdl</code>
+        </div>
+
         <hr>
 
         <p>
-            We monitored your product closely, and have decided that it is 💩. Here a few tweets we collected that:
+            Here a few tweets we collected:
         </p>
 
-        <blockquote class="blockquote" *ngFor="let tweet of contract.bestTweets">
-            <p class="mb-0">{{ tweet.text }}</p>
-            <footer class="blockquote-footer">That guy from Twitter</footer>
-        </blockquote>
+        <div *ngIf="contract.avg.sentiment >= 0">
+            <tweet [tweet]="tweet" *ngFor="let tweet of contract.bestTweets"></tweet>
+        </div>
+
+        <div *ngIf="contract.avg.sentiment < 0">
+            <tweet [tweet]="tweet" *ngFor="let tweet of contract.worstTweets"></tweet>
+        </div>
     </div>
 </div>
