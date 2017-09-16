@@ -1,3 +1,26 @@
 <div>
-hi
+    <form>
+        <div class="input-group">
+            <input type="text" class="form-control" id="search" placeholder="Search for Product ..." [(ngModel)]="searchQuery" name="search" autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" (click)="submit()">Look for it!</button>
+            </span>
+        </div>
+    </form>
+
+    <hr>
+
+    <div class="row" *ngFor="let product of products">
+        <div class="col mb-3">
+            <div class="card text-white" [ngClass]="{ 'bg-success': product.sentiment >= 0, 'bg-warning': product.sentiment < 0 }">
+                <div class="card-header">Sentiment: {{ product.sentiment }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ product.name }} -- {{ Math.floor(product.price / 100) }} CHF</h4>
+                    <p class="card-text" [innerHtml]="product.description"></p>
+                    <span class="badge badge-primary" *ngFor="let category of product.categories">{{ category }}</span>
+                    <a [routerLink]="['/orders/', product.id]" class="btn btn-primary float-right">Yep, I ordered that...</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
