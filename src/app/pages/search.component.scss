@@ -1,9 +1,15 @@
+.logo {
+    margin-top: 4rem;
+    height: 12rem;
+}
+
 .card > img {
     height: 100px;
 }
 
 .card {
-    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.56);
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.5);
+    border: none;
 }
 
 .badge {
@@ -12,14 +18,23 @@
 
 input, .input-group-btn > button {
     height: 3rem;
-    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.56);
+    border-color: rgba(0,0,0,0.05);
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.5);
 }
 
 .center {
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 .card-text {
     max-height: 5rem;
     overflow: hidden;
+}
+
+.logo-text {
+    color: white;
+    font-size: 2.2em;
+    position: absolute;
+    top: 5rem;
+    margin-left: 10rem;
 }

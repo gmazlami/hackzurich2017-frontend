@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompleteComponent } from './pages/complete.component';
 import { ReleaseComponent } from './pages/release.component';
 import { OrderComponent } from './pages/order.component';
@@ -9,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
+import { JasperoAlertsModule } from '@jaspero/ng2-alerts';
 import { routing } from './app.routes';
 
 @NgModule({
@@ -24,6 +26,8 @@ import { routing } from './app.routes';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    JasperoAlertsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
     ChartsModule

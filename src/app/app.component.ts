@@ -8,6 +8,10 @@ import * as pushpad from 'pushpad';
 export class AppComponent implements OnInit {
   title = 'app';
 
+  options: any = {
+    duration: 0
+  };
+
   ngOnInit() {
 
   }

@@ -1,4 +1,4 @@
-<div *ngIf="product" class="mt-4">
+<div *ngIf="product" class="pt-4">
     <div class="slide-fade-hide" [ngClass]="{ 'hide' : showOrderNumber }">
         <h3 class="text-center mt-4">
             {{ product.name }}
@@ -19,15 +19,15 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-auto">
-            <img (click)="showOrderNumber = true" class="brand" [ngClass]="{ 'brand-selected': showOrderNumber }" src="https://media.licdn.com/media/AAEAAQAAAAAAAAd7AAAAJDRiZmIzOGRiLTFmN2ItNDRkMS1hNDM5LWE5MjQ1ZTVlNmIwNw.png">
+    <div class="row mt-4 justify-content-center">
+        <div class="col-auto" class="brand" [ngClass]="{ 'brand-selected': showOrderNumber }">
+            <img (click)="showOrderNumber = true" src="https://media.licdn.com/media/AAEAAQAAAAAAAAd7AAAAJDRiZmIzOGRiLTFmN2ItNDRkMS1hNDM5LWE5MjQ1ZTVlNmIwNw.png">
         </div>
-        <div class="col-auto">
-            <img class="brand soon" src="https://pbs.twimg.com/profile_images/283242649/digitec_logo_300px_400x400.jpg">
+        <div class="col-auto" class="brand soon">
+            <img src="https://pbs.twimg.com/profile_images/283242649/digitec_logo_300px_400x400.jpg">
         </div>
-        <div class="col-auto">
-            <img class="brand soon" src="https://slickdeals.net/attachment/2/8/8/1/7/3/5026784.attach">
+        <div class="col-auto" class="brand soon">
+            <img src="https://slickdeals.net/attachment/2/8/8/1/7/3/5026784.attach">
         </div>
     </div>
 

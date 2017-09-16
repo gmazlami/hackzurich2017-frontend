@@ -1,21 +1,22 @@
 <div class="row">
     <div class="col text-center">
-        hier kommt tolles logo
+        <span class="logo-text">coldfeet</span>
+        <img src="assets/logo2.png" class="logo">
     </div>
 </div>
 <div class="row center">
     <div class="col">
         <input type="text" class="form-control form-control-lg" id="search" placeholder="Search for Product ..." (ngModelChange)="change($event)" [ngModel]="searchQuery" name="search" autocomplete="off">
 
-        <div class="row" *ngFor="let product of products">
+        <div class="row mt-4" *ngFor="let product of products">
             <div class="col mb-3">
                 <div class="card slide-fade" [ngClass]="{'show': product.show }">
-                    <div class="card-header text-right">Prediction: {{ sentimentToEmoji(product.sentiment) }}</div>
+                    <!--<div class="card-header text-right">Prediction: {{ sentimentToEmoji(product.sentiment) }}</div>-->
                     <div class="card-body">
                         <h4 class="card-title">{{ product.name }} -- {{ Math.floor(product.price / 100) }} CHF</h4>
                         <p class="card-text" [innerHtml]="product.description"></p>
                         <span class="badge badge-primary" *ngFor="let category of product.categories">{{ category }}</span>
-                        <a [routerLink]="['/orders/', product.sku]" class="btn btn-primary float-right">Yep, I ordered that...</a>
+                        <a [routerLink]="['/orders/', product.ean]" class="btn btn-outline-primary float-right">Yep, I ordered that...</a>
                     </div>
                 </div>
             </div>

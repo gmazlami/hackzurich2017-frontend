@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs/Rx';
+import { AlertsService } from '@jaspero/ng2-alerts';
 
 @Component({
     styleUrls: ['./order.component.scss'],
@@ -19,7 +20,7 @@ export class OrderComponent implements OnInit {
     verified: Boolean = false;
     verifying: Boolean = false;
 
-    constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
+    constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private alertService: AlertsService) {
         this.Math = Math;
         this.orderUpdated$.debounceTime(500).subscribe(result => {
             this.verifyPurchase();
@@ -56,6 +57,7 @@ export class OrderComponent implements OnInit {
             { productEan: this.product.ean, productSentiment: this.product.sentiment }
         ).subscribe(data => {
             this.product = data[0] as any;
+            this.alertService.create('success', 'Thanks for your payment! Now enjoy your wait, and feel confident!');
         });
     }
 
