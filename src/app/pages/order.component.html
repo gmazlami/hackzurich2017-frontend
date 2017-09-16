@@ -1,3 +1,21 @@
-<div>
-        
+<div *ngIf="product">
+  <h1>Product: {{ product.name }}</h1>
+  <p>{{ product.description }}</p>
+  <img [src]="product.images.highres">
+
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="https://pbs.twimg.com/profile_images/283242649/digitec_logo_300px_400x400.jpg" alt="Card image cap">
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://media.licdn.com/media/AAEAAQAAAAAAAAd7AAAAJDRiZmIzOGRiLTFmN2ItNDRkMS1hNDM5LWE5MjQ1ZTVlNmIwNw.png" alt="Card image cap">
+    </div>
+    <a href="#">
+      <div class="card">
+        <img class="card-img-top" src="https://slickdeals.net/attachment/2/8/8/1/7/3/5026784.attach" alt="Card image cap">
+      </div>
+    </a>
+  </div>
+
+
 </div>

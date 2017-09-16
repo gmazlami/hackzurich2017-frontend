@@ -11,7 +11,6 @@ export class OrderComponent implements OnInit {
     product: any;
 
     constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
-
     }
 
     ngOnInit() {
@@ -21,9 +20,9 @@ export class OrderComponent implements OnInit {
     }
 
     fetchProduct(id) {
-        this.http.get('http://localhost:8081/api/products/' + id).subscribe(data => {
-            this.product = data as any;
-        });
+      this.http.get('http://localhost:8081/api/products/' + id).subscribe(data => {
+        this.product = data[0] as any;
+      });
     }
 
     verifyPurchase(orderNumber: number) {
