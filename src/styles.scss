@@ -42,6 +42,51 @@ body, html {
     color: rgba(black, 0.7);
 }
 
-.jaspero-alert path {
+jaspero-alert path {
     fill: #28a745 !important;
+}
+
+.logo {
+    margin-top: 4rem;
+    height: 12rem;
+}
+
+
+.logo-text {
+    color: white;
+    font-size: 2.2em;
+    position: absolute;
+    top: 5rem;
+    margin-left: 10rem;
+}
+
+.brand {
+    margin: 1rem;
+    padding: 2rem;
+    transition: all 0.5s ease-out;
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.3);
+    background-color: white;
+
+    > img {
+        height: 5rem;
+        opacity: 0.5;
+    }
+}
+
+.brand-selected {
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.8);
+    > img {
+        opacity: 1;
+    }
+}
+
+.brand:hover {
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.8);
+    > img {
+        opacity: 1;
+    }
+}
+
+.soon {
+    filter: grayscale(100%);
 }

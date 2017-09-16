@@ -11,10 +11,10 @@ import { Subject, Observable } from 'rxjs/Rx';
 export class VoucherComponent implements OnInit {
 
     contract: any;
-
+    Math: Math;
 
     constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
-
+        this.Math = Math;
     }
 
     ngOnInit() {
@@ -25,7 +25,7 @@ export class VoucherComponent implements OnInit {
 
     fetchProduct(id) {
         this.http.get('http://localhost:8081/api/contracts/' + id).subscribe(data => {
-            this.contract = data[0] as any;
+            this.contract = data as any;
         });
     }
 

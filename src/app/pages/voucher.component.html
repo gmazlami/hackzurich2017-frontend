@@ -1,14 +1,26 @@
 <div class="row">
     <div class="col text-center">
-        hier kommt tolles logo
+        <span class="logo-text">coldfeet</span>
+        <img src="assets/logo2.png" class="logo">
     </div>
 </div>
-<div class="row center">
-    <div class="col">
-        {{ contract.product.name }}
-        <br>
-        {{ contract.product.price / 100 }}
-        <br>
-        {{ contract.insurancePrice }}
+<div class="row center justify-content-center" *ngIf="contract">
+    <div class="brand col-8">
+        <h3>{{ contract.product.name }}</h3>
+        <p>
+            You bought <b>{{ contract.product.name }}</b> for <b>{{ contract.product.price / 100 }} CHF</b>, and paid 
+            {{ Math.floor(contract.insurancePrice) }} CHF to insure your purchase.
+        </p>
+        
+        <hr>
+
+        <p>
+            We monitored your product closely, and have decided that it is 💩. Here a few tweets we collected that:
+        </p>
+
+        <blockquote class="blockquote" *ngFor="let tweet of contract.bestTweets">
+            <p class="mb-0">{{ tweet.text }}</p>
+            <footer class="blockquote-footer">That guy from Twitter</footer>
+        </blockquote>
     </div>
 </div>

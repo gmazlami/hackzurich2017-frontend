@@ -1,34 +1,3 @@
-.brand {
-    margin: 1rem;
-    padding: 2rem;
-    transition: all 0.5s ease-out;
-    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.3);
-    background-color: white;
-
-    > img {
-        height: 5rem;
-        opacity: 0.5;
-    }
-}
-
-.brand-selected {
-    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.8);
-    > img {
-        opacity: 1;
-    }
-}
-
-.brand:hover {
-    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.8);
-    > img {
-        opacity: 1;
-    }
-}
-
-.soon {
-    filter: grayscale(100%);
-}
-
 input, .input-group-btn > button {
     height: 3rem;
     box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.56);

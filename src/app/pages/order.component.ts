@@ -57,7 +57,7 @@ export class OrderComponent implements OnInit {
             { productEan: this.product.ean, productSentiment: this.product.sentiment }
         ).subscribe(data => {
             this.product = data[0] as any;
-            this.alertService.create('success', 'Thanks for your payment! Now enjoy your wait, and feel confident!');
+            this.alertService.create('success', 'Thanks for your payment! Now enjoy your wait for the release, no matter what happens.');
         });
     }
 

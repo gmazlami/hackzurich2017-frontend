@@ -13,7 +13,7 @@ export class CompleteComponent implements OnInit {
     product: any;
 
     constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
-
+        
     }
 
     ngOnInit() {
