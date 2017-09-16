@@ -13,8 +13,8 @@ export class ReleaseComponent implements OnInit {
     product: any;
 
     // chart.js
-    lineChartData: Array<any> = [{ data: [65, 59, 80, 81, 56, 55, 40], label: 'Sentiment' }];
-    lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    lineChartData: Array<any> = [{ data: [1, 0.8, 0.5, 0.7, -0.5, -0.8], label: 'Sentiment' }];
+    lineChartLabels: Array<any> = ['Before Release', 'After Release'];
     lineChartOptions: any = { responsive: true };
     lineChartLegend: Boolean = true;
     lineChartType: String = 'line';
@@ -27,7 +27,7 @@ export class ReleaseComponent implements OnInit {
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(148,159,177,0.8)'
         }
-    ]
+    ];
 
     constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
 

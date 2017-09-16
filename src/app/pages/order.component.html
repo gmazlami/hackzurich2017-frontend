@@ -1,11 +1,21 @@
-<div *ngIf="product" class="mt-3">
-    <h3 class="text-center">
-        {{ product.name }}
-    </h3>
+<div *ngIf="product" class="mt-4">
+    <div class="slide-fade-hide" [ngClass]="{ 'hide' : showOrderNumber }">
+        <h3 class="text-center mt-4">
+            {{ product.name }}
+        </h3>
 
-    <div class="row justify-content-center">
-        <div class="col-auto text-center">
-            <img [src]="product.images.highres">
+        <div class="mt-4 row justify-content-center">
+            <div class="col-sm-8 text-center">
+                <p>
+                    Got cold feet? We'll help you out. If you think you will suffer by buying this product, we'll reimburse you its original price 3 days after release.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-auto text-center">
+                <img [src]="product.images.highres">
+            </div>
         </div>
     </div>
 
@@ -23,13 +33,18 @@
 
     <div class="mt-4 row justify-content-center slide-fade" [ngClass]="{ 'show': showOrderNumber }">
         <div class="col-6 text-center">
-            <div class="input-group">
-                <input type="text" class="form-control text-center" [ngClass]="{ 'text-success': verified }" placeholder="0252-1334"
-                    (ngModelChange)="change($event)" [ngModel]="orderNumber" name="orderNumber" autocomplete="off">
-                <span class="input-group-btn">
-                    <button class="btn btn-success" [disabled]="!verified" type="button">Secure me, for {{ product.insurancePrice }} CHF!</button>
-                </span>
-            </div>
+                <p>
+                    So, you ordered with Siroop! Just give us your Order-Number so we can verify your purchase!
+                </p>
+
+                <input type="text" class="form-control text-center" [ngClass]="{ 'text-success': verified }" placeholder="Ordernumber: 0252-1334" (ngModelChange)="change($event)"
+                    [ngModel]="orderNumber" name="orderNumber" autocomplete="off">
+                <button class="btn btn-block mt-3 btn-success" (click)="insure()" [disabled]="!verified" type="button">
+                    <i class="fa fa-spinner fa-spin" *ngIf="verifying"></i>
+                    <span *ngIf="verifying">Verifying ...</span>
+                    <span *ngIf="!verified && !verifying">Enter your Ordernumber</span>
+                    <span *ngIf="verified">Secure me, for {{ Math.floor(product.insurancePrice) }} CHF!</span>
+                </button>
         </div>
     </div>
 

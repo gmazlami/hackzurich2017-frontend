@@ -12,3 +12,21 @@ $fa-font-path: "~font-awesome/fonts/";
 .slide-fade.show {
     opacity: 1;
 }
+
+.slide-fade-hide {
+    transition: all 0.5s ease-out;
+    opacity: 1;
+}
+
+.slide-fade-hide.hide {
+    opacity: 0;
+    margin-top: -400px;
+}
+
+h1, h2, h3, h4 {
+    color:#00A2FF;
+}
+
+body, html {
+    color: rgba(black, 0.7);
+}
