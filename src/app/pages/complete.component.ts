@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs/Rx';
+import io from 'socket.io-client';
 
 @Component({
     styleUrls: ['./complete.component.scss'],
@@ -10,10 +11,15 @@ import { Subject, Observable } from 'rxjs/Rx';
 
 export class CompleteComponent implements OnInit {
 
+    tweets: any[] = [];
     product: any;
 
     constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
-        
+        const socket = io('http://localhost:8081');
+        socket.connect();
+        socket.on('tweet', (tweet) => {
+            this.tweets.unshift(tweet);
+        });
     }
 
     ngOnInit() {
