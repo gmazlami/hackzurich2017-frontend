@@ -1,18 +1,18 @@
 <div class="row">
     <div class="col text-center">
-        <span class="logo-text">coldfeet</span>
+        <span class="logo-text">ColdFeet</span>
         <img src="assets/logo2.png" class="logo">
     </div>
 </div>
 <div class="row center justify-content-center" *ngIf="contract">
     <div class="brand col-8">
-        <h3>{{ contract.product.name }}</h3>
-        <p>
+        <h3 class="text-center">{{ contract.product.name }}</h3>
+        <p class="text-center">
             You bought <b>{{ contract.product.name }}</b> for <b>{{ contract.product.price / 100 }} CHF</b>, and paid {{
             Math.floor(contract.insurancePrice) }} CHF to insure your purchase.
         </p>
 
-        <p>
+        <p class="text-center">
             We monitored your product closely, and have decided that it is {{ contract.avg.sentiment >= 0 ? '🎉' : '💩' }}.
 
             <span *ngIf="contract.avg.sentiment >= 0">
