@@ -49,7 +49,7 @@ export class OrderComponent implements OnInit {
         setTimeout(() => {
             this.verifying = false;
             this.verified = true;
-        }, 1000);
+        }, 2000);
     }
 
     insure() {

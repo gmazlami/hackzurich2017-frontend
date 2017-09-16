@@ -1,6 +1,11 @@
 <blockquote class="blockquote">
     <p class="mb-0">{{ tweet.text }}</p>
     <footer class="blockquote-footer">
-        {{ tweet.user.name }} <span class="badge" [ngClass]="{ 'badge-success': tweet.sentiment >= 0.25, 'badge-secondary': tweet.sentiment >= -0.25 && tweet.sentiment < 0.25, 'badge-warning': tweet.sentiment < -0.25 }">{{ tweet.sentiment }}</span>
+        {{ tweet.user.name }} <span class="badge" [ngClass]="{ 'badge-success': tweet.sentiment >= 0.25, 'badge-secondary': tweet.sentiment >= -0.25 && tweet.sentiment < 0.25, 'badge-warning': tweet.sentiment < -0.25 }">{{ Math.round(tweet.sentiment * 100) / 100 }}</span>
+        <span>{{ tweet.emotion.anger > 0.5 ? '😡' : '' }}</span>
+        <span>{{ tweet.emotion.disgust > 0.5 ? '🤢' : '' }}</span>
+        <span>{{ tweet.emotion.fear > 0.5 ? '😨' : '' }}</span>
+        <span>{{ tweet.emotion.joy > 0.5 ? '😄' : '' }}</span>
+        <span>{{ tweet.emotion.sadness > 0.5 ? '😢' : '' }}</span>
     </footer>
 </blockquote>

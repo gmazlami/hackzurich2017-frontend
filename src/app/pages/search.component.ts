@@ -35,7 +35,7 @@ export class SearchComponent {
             this.products.forEach(product => {
                 setTimeout(function () {
                     product.show = true;
-                }, 10);
+                }, 50);
             });
         });
     }

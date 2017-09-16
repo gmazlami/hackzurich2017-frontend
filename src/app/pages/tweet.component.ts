@@ -13,4 +13,24 @@ export class TweetComponent {
     @Input()
     tweet: any;
 
+    Math: Math;
+
+    constructor() {
+        this.Math = Math;
+    }
+
+    sentimentToEmoji(sentiment) {
+        if (sentiment >= 0.5) {
+            return '😁';
+        } else if (sentiment >= 0.25) {
+            return '🙂';
+        } else if (sentiment >= -0.25) {
+            return '😐';
+        } else if (sentiment >= -0.5) {
+            return '😖';
+        } else {
+            return '😠';
+        }
+    }
+
 }

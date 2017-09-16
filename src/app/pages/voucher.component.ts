@@ -29,4 +29,17 @@ export class VoucherComponent implements OnInit {
         });
     }
 
+    sentimentToEmoji(sentiment) {
+        if (sentiment >= 0.5) {
+            return '😁';
+        } else if (sentiment >= 0.25) {
+            return '🙂';
+        } else if (sentiment >= -0.25) {
+            return '😐';
+        } else if (sentiment >= -0.5) {
+            return '😖';
+        } else {
+            return '😠';
+        }
+    }
 }
