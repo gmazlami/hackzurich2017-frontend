@@ -32,7 +32,24 @@ export class SearchComponent {
     submit() {
         this.http.get('http://localhost:8081/api/products/search?query=' + this.searchQuery).subscribe(data => {
             this.products = data as any;
+            this.products.forEach(product => {
+                setTimeout(function () {
+                    product.show = true;
+                }, 10);
+            });
         });
+    }
+
+    sentimentToEmoji(sentiment) {
+        if (sentiment >= 0.5) {
+            return '😁';
+        } else if (sentiment >= 0) {
+            return '🙂';
+        } else if (sentiment >= -0.5) {
+            return '😖';
+        } else {
+            return '😠';
+        }
     }
 
 }

@@ -5,14 +5,12 @@
 </div>
 <div class="row center">
     <div class="col">
-        <form class="mb-3">
-            <input type="text" class="form-control form-control-lg" id="search" placeholder="Search for Product ..." (ngModelChange)="change($event)" [ngModel]="searchQuery" name="search" autocomplete="off">
-        </form>
+        <input type="text" class="form-control form-control-lg" id="search" placeholder="Search for Product ..." (ngModelChange)="change($event)" [ngModel]="searchQuery" name="search" autocomplete="off">
 
         <div class="row" *ngFor="let product of products">
             <div class="col mb-3">
-                <div class="card text-white" [ngClass]="{ 'bg-success': product.sentiment >= 0, 'bg-warning': product.sentiment < 0 }">
-                    <div class="card-header">Sentiment: {{ product.sentiment }}</div>
+                <div class="card slide-fade" [ngClass]="{'show': product.show }">
+                    <div class="card-header text-right">Prediction: {{ sentimentToEmoji(product.sentiment) }}</div>
                     <div class="card-body">
                         <h4 class="card-title">{{ product.name }} -- {{ Math.floor(product.price / 100) }} CHF</h4>
                         <p class="card-text" [innerHtml]="product.description"></p>

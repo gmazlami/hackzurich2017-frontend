@@ -1,3 +1,4 @@
+import { ReleaseComponent } from './pages/release.component';
 import { OrderComponent } from './pages/order.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,6 +14,10 @@ const appRoutes: Routes = [
     {
         path: 'orders/:product',
         component: OrderComponent
+    },
+    {
+        path: 'releases/:product',
+        component: ReleaseComponent
     }
 ];
 

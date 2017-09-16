@@ -3,3 +3,12 @@
 
 $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome";
+
+.slide-fade {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+
+.slide-fade.show {
+    opacity: 1;
+}

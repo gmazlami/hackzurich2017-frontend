@@ -1,7 +1,9 @@
 .card > img {
     height: 100px;
-    opacity: 0;
-    transition: opacity 1s linear;
+}
+
+.card {
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.56);
 }
 
 .badge {
@@ -10,6 +12,7 @@
 
 input, .input-group-btn > button {
     height: 3rem;
+    box-shadow: 5px 5px 50px -20px rgba(0,0,0,0.56);
 }
 
 .center {
