@@ -17,7 +17,7 @@
                         <h4 class="card-title">{{ product.name }} -- {{ Math.floor(product.price / 100) }} CHF</h4>
                         <p class="card-text" [innerHtml]="product.description"></p>
                         <span class="badge badge-primary" *ngFor="let category of product.categories">{{ category }}</span>
-                        <a [routerLink]="['/orders/', product.id]" class="btn btn-primary float-right">Yep, I ordered that...</a>
+                        <a [routerLink]="['/orders/', product.sku]" class="btn btn-primary float-right">Yep, I ordered that...</a>
                     </div>
                 </div>
             </div>
